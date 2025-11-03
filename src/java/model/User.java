@@ -1,21 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package DAO;
+
+package model;
 
 public class User {
     private int userId;
     private String name;
     private String email;
     private String role;
-    private int warehouseId; 
+    
+    // warehouseId is dynamically retrieved in the DAO, so it's not stored here.
 
-    // Constructor (optional, but helpful)
     public User() {}
 
-    // Getters and Setters (REQUIRED for Servlets/JSPs)
-    
+    // Getters and Setters
     public int getUserId() { return userId; }
     public void setUserId(int userId) { this.userId = userId; }
     
@@ -27,7 +23,4 @@ public class User {
     
     public String getRole() { return role; }
     public void setRole(String role) { this.role = role; }
-    
-    public int getWarehouseId() { return warehouseId; }
-    public void setWarehouseId(int warehouseId) { this.warehouseId = warehouseId; }
 }

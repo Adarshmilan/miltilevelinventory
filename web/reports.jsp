@@ -1,17 +1,21 @@
-<%-- 
-    Document   : reports
-    Created on : 25 Oct 2025, 12:33:57 am
-    Author     : ADARSH MILAN
---%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+<head>
+<title>System Reports</title>
+</head>
+<body>
+<h2>Reports & Analytics (Future Feature)</h2>
+<p>This page is intended for the Admin to view aggregated data, such as Supplier Performance, Inventory Aging, and Demand Trends.</p>
+<hr>
+<h3>Feature Placeholder:</h3>
+<p>The <code>ReportServlet</code> (which is part of <code>WarehouseServlet.java</code> logic in this consolidated model) would execute complex JOIN and GROUP BY SQL queries to populate charts here.</p>
+
+
+
+
+<a href="dashboard.jsp">Back to Dashboard</a>
+</body>
 </html>
