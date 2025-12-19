@@ -18,18 +18,19 @@ RUN mkdir -p web/WEB-INF/lib
 ADD https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/8.2.0/mysql-connector-j-8.2.0.jar web/WEB-INF/lib/mysql-connector.jar
 
 # 2. Compile Java Source Code
-# We manually compile to avoid issues with NetBeans-specific build.xml files that contain absolute paths.
-# -d build/classes: Output compiled .class files here
-# -cp ...: Classpath includes Tomcat's Servlet API and our project libs
-RUN mkdir -p build/classes && \
-    javac -d build/classes \
+# Create the classes directory inside WEB-INF
+RUN mkdir -p web/WEB-INF/classes
+
+# Compile directly into web/WEB-INF/classes
+# -d web/WEB-INF/classes: Output compiled .class files directly where they belong in the WAR structure
+RUN javac -d web/WEB-INF/classes \
     -cp "/usr/local/tomcat/lib/servlet-api.jar:/usr/local/tomcat/lib/jsp-api.jar:web/WEB-INF/lib/*" \
     $(find src/java -name "*.java")
 
 # 3. Package into a WAR file
-# We combine the 'web' folder content with our compiled classes
+# Now we just need to jar the 'web' folder, as it contains everything (JSPs, web.xml, lib, classes)
 RUN mkdir -p dist && \
-    jar -cvf dist/ROOT.war -C web . -C build/classes WEB-INF/classes
+    jar -cvf dist/ROOT.war -C web .
 
 # ==========================================
 # Stage 2: Run the Application
