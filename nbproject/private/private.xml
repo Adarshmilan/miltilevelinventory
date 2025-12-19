@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/ADARSH%20MILAN/OneDrive/Documents/NetBeansProjects/multilevelinventory/src/java/servlets/InventoryServlet.java</file>
-            <file>file:/C:/Users/ADARSH%20MILAN/OneDrive/Documents/NetBeansProjects/multilevelinventory/src/java/DAO/InventoryDAO.java</file>
-            <file>file:/C:/Users/ADARSH%20MILAN/OneDrive/Documents/NetBeansProjects/multilevelinventory/src/java/DAO/DashboardDAO.java</file>
-            <file>file:/C:/Users/ADARSH%20MILAN/OneDrive/Documents/NetBeansProjects/multilevelinventory/web/dashboard_main.jsp</file>
-            <file>file:/C:/Users/ADARSH%20MILAN/OneDrive/Documents/NetBeansProjects/multilevelinventory/src/java/servlets/POServlet.java</file>
-            <file>file:/C:/Users/ADARSH%20MILAN/OneDrive/Documents/NetBeansProjects/multilevelinventory/src/java/servlets/ReportServlet.java</file>
-            <file>file:/C:/Users/ADARSH%20MILAN/OneDrive/Documents/NetBeansProjects/multilevelinventory/src/java/servlets/LoginServlet.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
