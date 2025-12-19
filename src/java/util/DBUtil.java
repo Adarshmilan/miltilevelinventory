@@ -6,10 +6,22 @@ import java.sql.SQLException;
 
 public class DBUtil {
 
-    // !!! IMPORTANT: Update these credentials for your MySQL database !!!
-    private static final String URL = "jdbc:mysql://localhost:3306/inventory";
-    private static final String USER = "root";       // Your MySQL username
-    private static final String PASSWORD = ""; // Your MySQL password
+    // Get credentials from Environment Variables (for Cloud) or fallback to
+    // Localhost (for Dev)
+    private static String getUrl() {
+        String dbUrl = System.getenv("DB_URL");
+        return (dbUrl != null && !dbUrl.isEmpty()) ? dbUrl : "jdbc:mysql://localhost:3306/inventory";
+    }
+
+    private static String getUser() {
+        String dbUser = System.getenv("DB_USER");
+        return (dbUser != null && !dbUser.isEmpty()) ? dbUser : "root";
+    }
+
+    private static String getPassword() {
+        String dbPass = System.getenv("DB_PASSWORD");
+        return (dbPass != null) ? dbPass : "";
+    }
 
     static {
         try {
@@ -21,7 +33,7 @@ public class DBUtil {
     }
 
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER, PASSWORD);
+        return DriverManager.getConnection(getUrl(), getUser(), getPassword());
     }
 
     public static void close(Connection conn) {
