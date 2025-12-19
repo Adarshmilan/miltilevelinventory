@@ -17,6 +17,10 @@ RUN mkdir -p web/WEB-INF/lib
 # which Docker cannot access.
 ADD https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/8.2.0/mysql-connector-j-8.2.0.jar web/WEB-INF/lib/mysql-connector.jar
 
+# Download JSTL (Required for JSP Standard Tags like <c:forEach>)
+# Tomcat does not include JSTL by default, so we must add it.
+ADD https://repo1.maven.org/maven2/javax/servlet/jstl/1.2/jstl-1.2.jar web/WEB-INF/lib/jstl-1.2.jar
+
 # 2. Compile Java Source Code
 # Create the classes directory inside WEB-INF
 RUN mkdir -p web/WEB-INF/classes
