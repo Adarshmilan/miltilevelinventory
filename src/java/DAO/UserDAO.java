@@ -12,7 +12,7 @@ import model.User;
 public class UserDAO {
 
     private static final String AUTH_SQL = 
-            "SELECT user_id, name, email, role FROM Users WHERE email = ? AND password = ?";
+            "SELECT user_id, name, email, role FROM users WHERE email = ? AND password = ?";
 
     public User authenticateUser(String email, String password) {
         User user = null;
